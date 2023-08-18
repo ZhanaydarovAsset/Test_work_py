@@ -6,7 +6,8 @@ if __name__ == "__main__":
     while True:
         print("1. Добавить заметку")
         print("2. Список заметок")
-        print("3. Выйти")
+        print("3. Редактировать заметку")
+        print("4. Выйти")
 
         choice = input("Выберите действие: ")
 
@@ -17,6 +18,11 @@ if __name__ == "__main__":
         elif choice == "2":
             notes_app.list_notes()
         elif choice == "3":
+            note_id = int(input("Введите ID заметки, которую хотите отредактировать: "))
+            new_title = input("Введите новый заголовок (или нажмите Enter для пропуска): ")
+            new_body = input("Введите новый текст (или нажмите Enter для пропуска): ")
+            notes_app.edit_note(note_id, new_title, new_body)
+        elif choice == "4":
             print("Выход из приложения.")
             break
         else:
